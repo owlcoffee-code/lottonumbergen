@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.link {
+    list-style: none;
+    display: inline-block;
+    
+}
+
+.link  a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+.link.active a {
+    text-decoration: underline;
+}

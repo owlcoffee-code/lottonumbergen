@@ -12,15 +12,19 @@ function generateNumbers(){
             numbers.push(randomNumber);
         }
     }
-    numbers.push(Math.floor(Math.random() * 25) * 1);
+    let megaBall;
+    do {
+        megaBall = Math.floor(Math.random() * 25) + 1;
+    }while(numbers.includes(megaBall));
+    numbers.push(megaBall);
     displayNumbers(numbers);
 }
 
 function displayNumbers(numbers) {
-    const sortedNumbers = [...numbers].sort((a ,b) => a - b);
-
+    const whiteBalls = [...numbers].slice(0, 5).sort((a,b) => a - b);
+    const megaBall = numbers[5];
     numbersDiv.innerHTML = `
-    <p>White Balls: ${sortedNumbers.slice(0 ,5).join(', ')}</p>
-    <p>Mega Ball: ${numbers[5]}</p>
+    <p>White Balls: ${whiteBalls.join( ', ' )}</p>
+    <p>Mega Ball: ${megaBall}</p>
     `
 }
